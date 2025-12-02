@@ -4,7 +4,7 @@ def read_input(filename='input.txt'):
         return f.read().strip()
 
 
-def parse_input(data):
+def parse_input(data, separator='\n'):
     """Parse the input data into a usable format."""
-    lines = data.split('\n')
+    lines = data.split(separator)
     return lines
