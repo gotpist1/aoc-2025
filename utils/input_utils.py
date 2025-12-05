@@ -9,6 +9,9 @@ def parse_input(data, separator='\n'):
     lines = data.split(separator)
     return lines
 
+def flatten(l):
+    return [item for sublist in l for item in sublist]
+
 class InputGrid:
     def __init__(self, input_data):
         self.data = input_data
