@@ -8,7 +8,7 @@ class Database:
         self.ranges_list = self.parse_ranges()
         self.flattened_ranges = [id_range for sublist in self.ranges_list for id_range in sublist]
 
-    def parse_ranges(self):
+    def parse_ranges(self) -> list[list[int]]:
         ranges_list = []
         for range_str in self.ranges:
             range_start, range_end = range_str.split('-')
@@ -17,7 +17,7 @@ class Database:
         return self.__merge_ranges(ranges_list)
 
     @staticmethod
-    def __merge_ranges(ranges):
+    def __merge_ranges(ranges) -> list[list[int]]:
         ranges.sort(key=lambda x: x[0])
         merged = [ranges[0]]
         for current in ranges[1:]:
